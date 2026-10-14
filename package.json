@@ -1,0 +1,29 @@
+{
+  "name": "cloudflare-image-mcp",
+  "version": "0.1.0",
+  "description": "Cloudflare Image MCP - OpenAI-compatible image generation with MCP support",
+  "author": "tan-yong-sheng",
+  "license": "MIT",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "prepare": "npx lefthook install",
+    "build": "npm run build:workers",
+    "build:workers": "cd workers && npm ci && npm run check",
+    "test": "npm run test:e2e",
+    "test:unit": "cd workers && npm test",
+    "test:e2e": "cd e2e && npm test",
+    "test:e2e:staging": "cd e2e && TEST_TARGET=staging npm test",
+    "test:e2e:slow": "cd e2e && E2E_TIER=slow npm test",
+    "test:e2e:production": "cd e2e && TEST_TARGET=production npm test",
+    "clean": "rm -rf e2e/test-results e2e/playwright-report"
+  },
+  "workspaces": [],
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "devDependencies": {
+    "lefthook": "^2.1.16",
+    "prettier": "^3.6.2"
+  }
+}

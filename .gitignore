@@ -1,0 +1,36 @@
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Build artifacts
+dist/
+node_modules/
+.vscode/
+.lavish/
+
+# Worktrees
+.worktrees/
+
+# Coding agents
+.pi/
+.claude/
+.codex/
+
+# e2e
+e2e/playwright-report/
+e2e/test-results/
+e2e/junit-results.xml
+
+# Test files
+test_images/
+
+# Cloudflare Workers
+workers/wrangler.toml
+workers/.wrangler
+.dev.vars
+
+# Docker
+*.log
+
+

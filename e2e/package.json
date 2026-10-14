@@ -1,0 +1,29 @@
+{
+  "name": "@cloudflare-image-mcp/e2e-tests",
+  "version": "0.1.0",
+  "description": "End-to-end tests for Cloudflare Image MCP",
+  "type": "module",
+  "scripts": {
+    "test": "playwright test",
+    "test:api": "playwright test tests/api",
+    "test:openai": "playwright test tests/api/openai",
+    "test:mcp": "playwright test tests/api/mcp",
+    "test:ui": "playwright test tests/ui",
+    "test:staging": "TEST_TARGET=staging playwright test",
+    "test:slow": "E2E_TIER=slow playwright test",
+    "test:smoke": "E2E_TIER=smoke playwright test",
+    "test:canary": "E2E_TIER=canary playwright test",
+    "test:ui:interactive": "playwright test --ui",
+    "test:debug": "playwright test --debug",
+    "test:report": "playwright show-report",
+    "install:browsers": "playwright install --with-deps"
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/client": "^2.3.1",
+    "@playwright/test": "^1.41.0",
+    "@types/node": "^20.10.0"
+  },
+  "engines": {
+    "node": ">=24.0.0"
+  }
+}
